@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import ImageNotSupportedIcon from '@mui/icons-material/ImageNotSupported';
-
 import * as S from './styles';
 
 const Details = () => {
