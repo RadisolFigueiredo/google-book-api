@@ -3,7 +3,6 @@ import BookContext from '../../context/books';
 import { api } from '../../services/api';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
 import * as S from './styles';
 
 const Header = () => {
