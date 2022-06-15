@@ -1,11 +1,14 @@
 import { useContext, useState } from 'react';
 import BookContext from '../../context/books';
 import { api } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import * as S from './styles';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
 
   const { setBookList, favoriteBooks } = useContext(BookContext);
@@ -17,13 +20,12 @@ const Header = () => {
         `volumes?q=${search}&key=AIzaSyBvkUxtXqmY92mP5yJrg4DcLXqn7wC8myA&maxResults=40`
       );
       setBookList(data.items);
+      navigate('/');
     } catch (err) {
       console.log(err);
       setBookList([]);
     }
   }
-
-  
 
   const resetItems = () => {
     setSearch('');
@@ -49,10 +51,10 @@ const Header = () => {
       </S.BoxSearch>
       <S.BoxIconFavorites
         to={'/favorite'}
-        hasFavorite={favoriteBooks.length > 0}
+        $hasFavorite={!!favoriteBooks.length}
       >
         <FavoriteIcon fontSize='large' />
-        <S.ChipFavoriteLength hasFavorite={favoriteBooks.length > 0}>
+        <S.ChipFavoriteLength $hasFavorite={!!favoriteBooks.length}>
           <S.ProductInCartLength>{favoriteBooks.length}</S.ProductInCartLength>
         </S.ChipFavoriteLength>
       </S.BoxIconFavorites>

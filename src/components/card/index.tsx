@@ -11,7 +11,6 @@ import * as S from './styles';
 interface Props {
   to: string;
   state: any;
-  key: string;
   item: BookType;
   notImage: boolean;
   iconFavorite: boolean;
@@ -25,7 +24,6 @@ interface Props {
 const Card = ({
   to,
   state,
-  key,
   notImage,
   iconFavorite,
   title,
@@ -38,7 +36,7 @@ const Card = ({
   const { addBook, removeBook } = useContext(BookContext);
 
   return (
-    <S.Card to={to} state={state} key={key}>
+    <S.Card to={to} state={state}>
       <S.BoxFavoriteIcon onClick={(e) => e.preventDefault()}>
         {iconFavorite ? (
           <FavoriteIcon

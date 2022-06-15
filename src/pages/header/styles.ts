@@ -61,12 +61,12 @@ export const Input = styled.input`
 `;
 
 interface FavoriteProps {
-  hasFavorite?: boolean;
+  $hasFavorite: boolean;
 }
 
 export const BoxIconFavorites = styled(Link)<FavoriteProps>`
   text-decoration: none;
-  color: ${({ hasFavorite }) => (hasFavorite ? 'red' : '#ffffff')};
+  color: ${({ $hasFavorite }) => $hasFavorite  ? 'red' : '#ffffff'};
   margin-right: 40px;
 `;
 
@@ -80,10 +80,10 @@ export const ChipFavoriteLength = styled.div<FavoriteProps>`
   top: 10px;
   right: -4px;
   margin-right: 80px;
-  display: ${({ hasFavorite }) => (hasFavorite ? '' : 'none')}; ;
+  display: ${({ $hasFavorite }) => $hasFavorite  ? '' : 'none'}; ;
 `;
-export const ProductInCartLength = styled.p<FavoriteProps>`
-  color: ${({ hasFavorite }) => (hasFavorite ? '#ffffff' : '#b769a3')};
+export const ProductInCartLength = styled.p`
+  color: #b769a3;
   font-size: 14px;
   font-weight: 500;
   position: absolute;

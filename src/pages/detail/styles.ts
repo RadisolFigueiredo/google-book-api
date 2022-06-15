@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 0 20%;
-  margin-top: 30px;
+  margin: 5% 20%;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 30px;
+  box-shadow: 6px 6px 2em #888;
 `;
 
 export const BoxTitle = styled.div`
@@ -29,10 +29,13 @@ export const BoxRow = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const BoxInfoDescription = styled.div`
   width: 60%;
+  height: 60%;
 `;
 
 export const BoxInfo = styled.div`
